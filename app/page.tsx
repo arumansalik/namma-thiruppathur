@@ -112,6 +112,8 @@ export default function Home() {
 
   const [showHeader, setShowHeader] = useState(false);
 
+  const [isLoadingVideo, setIsLoadingVideo] = useState(true);
+
   // Handle scroll event
   const handleScroll = () => {
     if (window.scrollY > 500) {
@@ -119,6 +121,10 @@ export default function Home() {
     } else {
       setShowHeader(false);
     }
+  };
+
+  const handleVideoLoad = () => {
+    setIsLoadingVideo(false); // Video has finished loading
   };
 
   useEffect(() => {
@@ -143,10 +149,19 @@ export default function Home() {
           loop
           muted
           playsInline
+          onCanPlayThrough={handleVideoLoad}
         >
           <source src="/videos/bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+
+        {/* Fallback background image */}
+        {isLoadingVideo && (
+          <div
+            className="absolute top-0 left-0 w-full h-full bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/hero-background.jpg')" }}
+          ></div>
+        )}
 
         {/* Overlay (Optional) */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
@@ -172,13 +187,7 @@ export default function Home() {
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-4 sm:px-6">
           <div className="flex items-center space-x-4">
-            <Image
-              src="/logo.png"
-              alt="Logo"
-              width={60}
-              height={100}
-              
-            />
+            <Image src="/logo.png" alt="Logo" width={60} height={100} />
             <h1 className="text-lg sm:text-2xl font-extrabold text-gray-800">
               Namma Thiruppathur
             </h1>
@@ -258,7 +267,7 @@ export default function Home() {
           <p className="text-sm">
             &copy; 2025 Namma Thiruppathur. Follow us on{" "}
             <a
-              href="https://www.instagram.com/namma_thiruppathur/"
+              href="https://appurl.io/LxKDDLoMPl"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:underline"
