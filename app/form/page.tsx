@@ -42,7 +42,7 @@ export default function FormPage() {
       } else {
         setError(true);
       }
-    } catch (err) {
+    } catch {
       setError(true);
     }
   };
@@ -58,7 +58,7 @@ export default function FormPage() {
           Contact Us
         </h1>
         <p className="text-gray-600 text-center mb-6">
-          We'd love to hear from you! Please fill out the form below.
+          We&#39;d love to hear from you! Please fill out the form below.
         </p>
 
         {/* Form Section */}
@@ -143,7 +143,7 @@ export default function FormPage() {
           </form>
         ) : (
           <div className="text-center text-green-600 font-medium">
-            Thank you for your message! We'll get back to you soon.
+            Thank you for your message! We&#39;ll get back to you soon.
           </div>
         )}
         {error && (

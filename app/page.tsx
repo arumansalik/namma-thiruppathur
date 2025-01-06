@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 // Sample video data
@@ -217,7 +218,7 @@ export default function Home() {
           <div className="flex items-center space-x-4">
             <Image src="/logo.png" alt="Logo" width={60} height={100} />
             <h1 className="text-lg sm:text-2xl font-extrabold text-gray-800">
-              <a href="/">Namma Thiruppathur</a>
+              <Link href="/">Namma Thiruppathur</Link>
             </h1>
           </div>
 
