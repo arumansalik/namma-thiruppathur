@@ -171,10 +171,7 @@ export default function Home() {
           playsInline
           onCanPlayThrough={handleVideoLoad}
         >
-          <source
-            src="https://namma-thiruppathur.pages.dev/videos/bg.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/bg.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
@@ -198,6 +195,14 @@ export default function Home() {
             <p className="text-sm font-medium font-poppins">
               Explore videos and reels about our native place.
             </p>
+            <div className="text-center mt-6">
+              <a
+                href="/form"
+                className="bg-blue-600 text-white px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition duration-300"
+              >
+                Contact Us
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -212,9 +217,10 @@ export default function Home() {
           <div className="flex items-center space-x-4">
             <Image src="/logo.png" alt="Logo" width={60} height={100} />
             <h1 className="text-lg sm:text-2xl font-extrabold text-gray-800">
-              Namma Thiruppathur
+              <a href="/">Namma Thiruppathur</a>
             </h1>
           </div>
+
           <p className="hidden sm:block text-gray-600 text-sm">
             Explore reels & videos about our native place!
           </p>
