@@ -9,101 +9,121 @@ const videos = [
     id: 1,
     title: "Silendra Thiruppathur",
     url: "/videos/video1.mp4",
+    thumbnail: "/thumbnails/thumbnail1.jpeg",
   },
   {
     id: 2,
     title: "Kalungupatti",
     url: "/videos/video20.mp4",
+    thumbnail: "/thumbnails/thumbnail20.jpeg",
   },
   {
     id: 3,
     title: "Thiruppathur Rainy Day",
     url: "/videos/video17.mp4",
+    thumbnail: "/thumbnails/thumbnail17.jpeg",
   },
   {
     id: 4,
     title: "Semozhi Park",
     url: "/videos/video9.mp4",
+    thumbnail: "/thumbnails/thumbnail9.jpeg",
   },
   {
     id: 5,
     title: "Last Day In TPR",
     url: "/videos/video2.mp4",
+    thumbnail: "/thumbnails/thumbnail2.jpeg",
   },
   {
     id: 6,
     title: "Karaiyur Rekla ",
     url: "/videos/video3.mp4",
+    thumbnail: "/thumbnails/thumbnail3.jpeg",
   },
   {
     id: 7,
     title: "A.G Churuch",
     url: "/videos/video8.mp4",
+    thumbnail: "/thumbnails/thumbnail8.jpeg",
   },
   {
     id: 8,
     title: "TPR Drone View",
     url: "/videos/video16.mp4",
+    thumbnail: "/thumbnails/thumbnail16.jpeg",
   },
   {
     id: 9,
     title: "In 2050?",
     url: "/videos/video5.mp4",
+    thumbnail: "/thumbnails/thumbnail5.jpeg",
   },
   {
     id: 10,
     title: "Kavingar Kannadasan",
     url: "/videos/video4.mp4",
+    thumbnail: "/thumbnails/thumbnail4.jpeg",
   },
   {
     id: 11,
     title: "KundraKudi",
     url: "/videos/video15.mp4",
+    thumbnail: "/thumbnails/thumbnail15.jpeg",
   },
   {
     id: 12,
     title: "Thirumayam Church",
     url: "/videos/video6.mp4",
+    thumbnail: "/thumbnails/thumbnail6.jpeg",
   },
   {
     id: 13,
     title: "Manjal Veyil",
     url: "/videos/video10.mp4",
+    thumbnail: "/thumbnails/thumbnail10.jpeg",
   },
   {
     id: 14,
     title: "Silampatti",
     url: "/videos/video13.mp4",
+    thumbnail: "/thumbnails/thumbnail13.jpeg",
   },
   {
     id: 15,
     title: "Vairavan Kovil",
     url: "/videos/video14.mp4",
+    thumbnail: "/thumbnails/thumbnail14.jpeg",
   },
   {
     id: 16,
     title: "Ayyapan Kovil",
     url: "/videos/video7.mp4",
+    thumbnail: "/thumbnails/thumbnail7.jpeg",
   },
   {
     id: 17,
     title: "Kalungupatti",
     url: "/videos/video12.mp4",
+    thumbnail: "/thumbnails/thumbnail12.jpeg",
   },
   {
     id: 18,
     title: "TPR old Busstand",
     url: "/videos/video18.mp4",
+    thumbnail: "/thumbnails/thumbnail18.jpeg",
   },
   {
     id: 19,
     title: "Seedevi Pond",
     url: "/videos/video11.mp4",
+    thumbnail: "/thumbnails/thumbnail11.jpeg",
   },
   {
     id: 20,
     title: "N.Pudur Birds",
     url: "/videos/video19.mp4",
+    thumbnail: "/thumbnails/thumbnail19.jpeg",
   },
 ];
 
@@ -151,7 +171,10 @@ export default function Home() {
           playsInline
           onCanPlayThrough={handleVideoLoad}
         >
-          <source src="/videos/bg.mp4" type="video/mp4" />
+          <source
+            src="https://namma-thiruppathur.pages.dev/videos/bg.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
 
@@ -211,12 +234,11 @@ export default function Home() {
               className="bg-white shadow-lg rounded-lg overflow-hidden hover:scale-105 transform transition duration-300"
             >
               <div className="relative group">
-                <video
-                  src={video.url}
+                <img
+                  src={video.thumbnail}
+                  alt={`${video.title} Thumbnail`}
                   className="w-full h-56 sm:h-64 object-cover"
-                  onClick={() => handlePreview(video.url)}
-                  muted
-                ></video>
+                />
                 <div className="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
                   <p className="text-white font-semibold text-lg">
                     {video.title}
